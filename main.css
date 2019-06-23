@@ -1,25 +1,65 @@
+:root{
+  --slot-height: 60px;
+  --slot-size: 40px;
+}
+
+body{
+  background-color: #fff
+}
 .slottt-machine-recipe {
     margin: 0px auto;
     width: 700px;
     margin-top: 50px;
+    
   }
   
   .slottt-machine-recipe__mask {
       width: 100%;
-      height: 150px;
+      height: var(--slot-height,150px);
       overflow: hidden; 
       position: relative;
-      display: inline-block;
-      margin-bottom: -40px;
+      display: block;
+      padding-left: 30px;
+      padding-right: 30px;
+      background-color: #fff;
+          /*box-shadow: inset 0 0 40px rgba(0,0,0,.3);*/
+    /*padding: 12px;*/
+    border-radius: 30px;
+    text-align: center;
   }
+
+    .slottt-machine-recipe__mask:before{
+      content: '';
+      height: 20px;
+      width: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1;
+      background-image: linear-gradient(rgba(255,255,255,.95), rgba(255,255,255,.0));
+    }
+
+    .slottt-machine-recipe__mask:after{
+      content: '';
+      height: 20px;
+      width: 100%;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      z-index: 1;
+      background-image: linear-gradient(rgba(255,255,255,.0), rgba(255,255,255,.95));
+    }
   
   .slottt-machine-recipe__items_container {
       position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
   }
   
   .slottt-machine-recipe__item {
-      min-height: 150px;
-      max-height: 150px;
+      min-height: var(--slot-height,150px);
+      max-height: var(--slot-height,150px);
       margin: 0px;
       padding: 0px;
       background-size: contain;
@@ -27,13 +67,15 @@
   
   /* Typography */
   
-  body {
-    font-family: Helvetica, Arial, sans serif;
-  }
-  
   .recipe_if, .recipe_then {
+    display: block;
       font-weight: bold;
-      font-size: 120px;
+      font-size: var(--slot-size,120px );
+
+      text-transform: uppercase;
+      line-height: var(--slot-height,150px);
+      overflow: hidden;
+      white-space: nowrap;
   }
   
   .tagline {
@@ -41,8 +83,27 @@
     font-size: 24px;
   }
   
-  a {
+.slottt-machine{
+  height: var(--slot-height,150px);
+  overflow: hidden;
+
+  margin: 0px auto;
+  width: 700px;
+    position: relative;
+}
+.slottt-machine-mask{
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  /*transition: top .2s ease;*/
+}
+.slottt-machine-item{
+  line-height: var(--slot-height,150px);
+  height: var(--slot-height,150px);
+   font-size: 120px;
    font-weight: bold;
-   text-decoration: none;
-   color: #33CCFF;
-  }
+
+   white-space: nowrap;
+    overflow: hidden;
+}
