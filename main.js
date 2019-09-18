@@ -155,6 +155,8 @@ var msa = [
     buildSlotContents($wordbox, wordlist);  
     buildSlotContents($wordbox, wordlist);  
     buildSlotContents($wordbox, wordlist);
+    buildSlotContents($wordbox, wordlist);
+    buildSlotContents($wordbox, wordlist);
 
 
     $('#stop').prop('disabled', true);
